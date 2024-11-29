@@ -13,6 +13,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 # Environment Variables
+export PATH=$PATH:$HOME/go/bin
 export EDITOR="nvim"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -59,3 +60,6 @@ alias ls="ls --color"
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
