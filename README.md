@@ -32,3 +32,7 @@ then use GNU stow to create symlinks
 ```bash
 stow --adopt .
 ```
+
+## Yutube tutorial video
+
+[Stow-Tutorial](https://youtu.be/y6XCebnB9gs?si=OAQIpCa-ME6Mi1St)
