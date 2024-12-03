@@ -19,6 +19,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 source "$HOME/.cargo/env" 
 export ANDROID_HOME=$HOME/Android/Sdk
+AVALONIA_GLOBAL_SCALE_FACTOR=2
+export AVALONIA_GLOBAL_SCALE_FACTOR
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
