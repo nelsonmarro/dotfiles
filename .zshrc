@@ -67,3 +67,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 source /usr/share/nvm/init-nvm.sh
+
+export QT_SELECT=6
