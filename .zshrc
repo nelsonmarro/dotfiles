@@ -69,3 +69,5 @@ eval "$(zoxide init --cmd cd zsh)"
 source /usr/share/nvm/init-nvm.sh
 
 export QT_SELECT=6
+# export GOBIN=$HOME/go/bin
+# export PATH=$PATH:$GOBIN
