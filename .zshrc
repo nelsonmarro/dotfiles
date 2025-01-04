@@ -59,7 +59,7 @@ alias e='exit'
 alias vim="nvim"
 alias vi="nvim"
 alias ls="ls --color"
-alias air='~/.air'
+# alias air='~/.air'
 
 # Shell integrations
 eval "$(fzf --zsh)"
