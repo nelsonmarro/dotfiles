@@ -21,6 +21,7 @@ source "$HOME/.cargo/env"
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_NDK_HOME=~/Android/Sdk/ndk/28.0.12674087
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK_HOME
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
 AVALONIA_GLOBAL_SCALE_FACTOR=2
 export AVALONIA_GLOBAL_SCALE_FACTOR
