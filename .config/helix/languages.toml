@@ -1,26 +1,83 @@
 [[language]]
 name = "templ"
-injection-regex = "templ"
 file-types = ["templ"]
-roots = ["go.mod", "go.work", ".git"]
 auto-format = true
-indent = { tab-width = 2, unit = "  " }
 language-servers = [ "templ" ]
 
 [[language]]
-name = "html"
-injection-regex = "html"
-file-types = ["html", "templ"]
-roots = ["package.json", ".git"]
+name = "typescript"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
-indent = { tab-width = 2, unit = "  " }
-language-servers = [ "html" ]
+
+[[language]]
+name = "tsx"
+language-servers = [ "deno", "eslint", "emmet-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = [ "--parser", "json" ] }
+auto-format = true
+
+[[language]]
+name = "html"
+file-types = ["html","templ"]
+language-servers = [ "vscode-html-language-server", "emmet-ls" ]
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "emmet-ls" ]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+auto-format = true
+
+[language-server]
+emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
 
 [language-server.templ]
 command = "templ"
 args = ["lsp"]
 
-[language-server.html]
-command = "vscode-html-language-server"
+[language-server.eslint]
+command = "vscode-eslint-language-server"
 args = ["--stdio"]
-config = {embeddedLanguages = {css = true,javascript = true},provideFormatter = true}
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
