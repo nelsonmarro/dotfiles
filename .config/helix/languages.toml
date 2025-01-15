@@ -2,7 +2,7 @@
 name = "templ"
 injection-regex = "templ"
 file-types = ["templ"]
-roots = ["go.mod", "go.work", ".git/"]
+roots = ["go.mod", "go.work", ".git"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 language-servers = [ "templ" ]
@@ -11,7 +11,7 @@ language-servers = [ "templ" ]
 name = "html"
 injection-regex = "html"
 file-types = ["html", "templ"]
-roots = ["package.json", ".git/"]
+roots = ["package.json", ".git"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 language-servers = [ "html" ]
