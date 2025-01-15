@@ -1,4 +1,3 @@
-
 [language-server]
 emmet-ls = { command = "emmet-ls", args = ["--stdio"] }
 
