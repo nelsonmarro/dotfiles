@@ -2,12 +2,25 @@
 name = "templ"
 injection-regex = "templ"
 file-types = ["templ"]
-roots = ["go.mod", "go.work",  {glob = ".git/" }]
+roots = ["go.mod", "go.work", ".git/"]
 auto-format = true
-comment-tokens = "#"
 indent = { tab-width = 2, unit = "  " }
 language-servers = [ "templ" ]
 
-[language-server.mylang-lsp]
+[[language]]
+name = "html"
+injection-regex = "html"
+file-types = ["html", "templ"]
+roots = ["package.json", ".git/"]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "html" ]
+
+[language-server.templ]
 command = "templ"
 args = ["lsp"]
+
+[language-server.html]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+config = {embeddedLanguages = {css = true,javascript = true},provideFormatter = true}
