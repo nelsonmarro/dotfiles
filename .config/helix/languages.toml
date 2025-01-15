@@ -1,76 +1,6 @@
-[[language]]
-name = "templ"
-file-types = ["templ"]
-auto-format = true
-language-servers = [ "templ" ]
-
-[[language]]
-name = "typescript"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
-formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-auto-format = true
-
-[[language]]
-name = "tsx"
-language-servers = [ "deno", "eslint", "emmet-ls" ]
-formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-auto-format = true
-
-[[language]]
-name = "javascript"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
-formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-auto-format = true
-
-[[language]]
-name = "jsx"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
-formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-auto-format = true
-
-[[language]]
-name = "json"
-formatter = { command = "prettier", args = [ "--parser", "json" ] }
-auto-format = true
-
-[[language]]
-name = "html"
-file-types = ["html","templ"]
-language-servers = [ "vscode-html-language-server", "emmet-ls" ]
-formatter = { command = 'prettier', args = ["--parser", "html"] }
-auto-format = true
-
-[[language]]
-name = "css"
-language-servers = [ "vscode-css-language-server", "emmet-ls" ]
-formatter = { command = 'prettier', args = ["--parser", "css"] }
-auto-format = true
 
 [language-server]
-emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
-
-[language-server.templ]
-command = "templ"
-args = ["lsp"]
-
-[language-server.eslint]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
-
-[language-server.eslint.config]
-codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
-format = { enable = true }
-nodePath = ""
-quiet = false
-rulesCustomizations = []
-run = "onType"
-validate = "on"
-experimental = {}
-problems = { shortenToSingleLine = false }
-
-[language-server.eslint.config.codeAction]
-disableRuleComment = { enable = true, location = "separateLine" }
-showDocumentation = { enable = false }
+emmet-ls = { command = "emmet-ls", args = ["--stdio"] }
 
 [language-server.vscode-json-language-server.config]
 json = { validate = { enable = true }, format = { enable = true } }
@@ -81,3 +11,25 @@ css = { validate = { enable = true } }
 scss = { validate = { enable = true } }
 less = { validate = { enable = true } }
 provideFormatter = true
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ["--parser", "json"] }
+auto-format = true
+
+[[language]]
+name = "templ"
+language-servers = ["templ", "vscode-html-language-server", "emmet-ls"]
+auto-format = true
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet-ls"]
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "emmet-ls"]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+auto-format = true
