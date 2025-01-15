@@ -1,0 +1,13 @@
+[[language]]
+name = "templ"
+injection-regex = "templ"
+file-types = ["templ"]
+roots = ["go.mod", "go.work",  {glob = ".git/" }]
+auto-format = true
+comment-tokens = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "templ" ]
+
+[language-server.mylang-lsp]
+command = "templ"
+args = ["lsp"]
