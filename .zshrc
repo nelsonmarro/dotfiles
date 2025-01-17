@@ -19,9 +19,13 @@ export NVM_DIR="$HOME/.nvm"
 source "$HOME/.cargo/env" 
 
 export ANDROID_HOME=$HOME/Android/Sdk
-export ANDROID_NDK_HOME=~/Android/Sdk/ndk/28.0.12674087
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK_HOME
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
+export PATH=$PATH:$ANDROID_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+
+export CHROME_EXECUTABLE=google-chrome-stable
 
 AVALONIA_GLOBAL_SCALE_FACTOR=2
 export AVALONIA_GLOBAL_SCALE_FACTOR
