@@ -83,3 +83,7 @@ eval "$(zoxide init --cmd cd zsh)"
 source /usr/share/nvm/init-nvm.sh
 
 export QT_SELECT=6
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
