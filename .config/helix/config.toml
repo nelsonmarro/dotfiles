@@ -21,3 +21,9 @@ hidden = false
 cursor-line = "error"
 # Minimum severity to show a diagnostic on other lines:
 # other-lines = "error"
+   
+[keys.normal]
+"C-s" = ":w"
+
+[keys.insert]
+"C-s" = ["normal_mode", ":w"]
