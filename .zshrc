@@ -89,3 +89,10 @@ export QT_SELECT=6
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# bun completions
+[ -s "/home/nelson/.bun/_bun" ] && source "/home/nelson/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
