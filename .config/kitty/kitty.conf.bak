@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_THEME
-# Dayfox
+# Carbonfox
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -19,7 +19,7 @@ bold_italic_font auto
 font_size 10.0
 
 # modify_font cell_width 200%
-modify_font cell_height 115%
+modify_font cell_height 120%
 
 window_padding_width 6
 
