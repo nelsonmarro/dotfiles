@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_THEME
-# Carbonfox
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -16,10 +16,9 @@ bold_font        auto
 italic_font      auto
 bold_italic_font auto
 
-font_size 10.0
+font_size 11.0
 
-# modify_font cell_width 200%
-modify_font cell_height 120%
+modify_font cell_height 1.2
 
 window_padding_width 6
 
