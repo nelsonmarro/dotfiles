@@ -24,7 +24,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
 export PATH=$PATH:$ANDROID_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
-export JAVA_HOME=/usr/lib/jvm/java-23-openjdk-bin
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
 
 export CAPACITOR_ANDROID_STUDIO_PATH=/home/nelson/.local/share/JetBrains/Toolbox/apps/android-studio/bin/studio.sh 
 
