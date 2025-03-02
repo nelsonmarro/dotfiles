@@ -19,6 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 source "$HOME/.cargo/env" 
 
+export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk/28.0.12674087
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
