@@ -29,8 +29,6 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
 
 export CAPACITOR_ANDROID_STUDIO_PATH=/home/nelson/.local/share/JetBrains/Toolbox/apps/android-studio/bin/studio.sh 
 
-export CHROME_EXECUTABLE=google-chrome-stable
-
 AVALONIA_GLOBAL_SCALE_FACTOR=2
 export AVALONIA_GLOBAL_SCALE_FACTOR
 
@@ -87,7 +85,6 @@ eval "$(zoxide init --cmd cd zsh)"
 source /usr/share/nvm/init-nvm.sh
 
 export QT_SELECT=6
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
