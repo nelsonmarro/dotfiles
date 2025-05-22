@@ -9,8 +9,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(zsh-autosuggestions zsh-syntax-highlighting fzf-tab git archlinux)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
-source $ZSH/oh-my-zsh.sh
+autoload -U compinit && compinit
+source "$ZSH/oh-my-zsh.sh"
 
 # Environment Variables
 export BROWSER=firefox
@@ -81,8 +81,8 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Generated for envman. Do not edit.
-# [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-# source /usr/share/nvm/init-nvm.sh
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+source /usr/share/nvm/init-nvm.sh
 
 export QT_SELECT=6
 
