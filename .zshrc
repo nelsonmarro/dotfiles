@@ -112,5 +112,6 @@ _dotnet_zsh_complete()
   # This is not a variable assignment, don't remove spaces!
   _values = "${(ps:\n:)completions}"
 }
-
 compdef _dotnet_zsh_complete dotnet
+
+export SSL_CERT_DIR=$HOME/.aspnet/dev-certs/trust:/usr/lib/ssl/certs
