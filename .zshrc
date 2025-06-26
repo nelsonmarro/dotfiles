@@ -70,28 +70,75 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Shell functions
 # Function to run Go test coverage for a specified package and open the HTML report
 go_coverage() {
-  if [ -z "$1" ]; then
-    echo "Usage: go_coverage <./your/package/path>"
-    echo "Example: go_coverage ./service"
-    echo "Example: go_coverage ./"
+  local package_path=""
+  local tags_flag=""
+  local cover_profile="coverage.out" # Output file for coverage data
+
+  # Parse arguments
+  while (( "$#" )); do
+    case "$1" in
+      -tags | --tags)
+        if [ -n "$2" ]; then
+          tags_flag="-tags=$2"
+          shift 2 # Consume flag and its value
+        else
+          echo "Error: -tags requires an argument (e.g., -tags=integration)"
+          return 1
+        fi
+        ;;
+      -h | --help)
+        echo "Usage: go_coverage [OPTIONS] <./your/package/path>"
+        echo "  -tags <tag_name> or --tags=<tag_name> : Specify build tags for tests (e.g., integration)"
+        echo "Example: go_coverage -tags integration ./service"
+        echo "Example: go_coverage ./... -tags=integration"
+        echo "Example: go_coverage ./admin"
+        return 0
+        ;;
+      -*) # Unknown flag
+        echo "Error: Unknown option '$1'"
+        echo "Use 'go_coverage --help' for usage."
+        return 1
+        ;;
+      *) # Package path (must be the last non-flag argument)
+        if [ -z "$package_path" ]; then
+          package_path="$1"
+        else
+          echo "Error: Multiple package paths specified or invalid argument order."
+          echo "Usage: go_coverage [OPTIONS] <./your/package/path>"
+          echo "Use 'go_coverage --help' for usage."
+          return 1
+        fi
+        shift # Consume package path
+        ;;
+    esac
+  done
+
+  # Check if package_path was provided
+  if [ -z "$package_path" ]; then
+    echo "Error: No package path provided."
+    echo "Usage: go_coverage [OPTIONS] <./your/package/path>"
+    echo "Use 'go_coverage --help' for usage."
     return 1
   fi
-  
-  local package_path="$1"
-  local cover_profile="coverage.out" # You can make this configurable too if needed
-  
-  echo "Running tests for '$package_path' and generating coverage report..."
-  go test -coverprofile="${cover_profile}" "${package_path}" && go tool cover -html="${cover_profile}"
-  
+
+  echo "Running tests for '$package_path' with tags '$tags_flag' and generating coverage report..."
+
+  # Construct the go test command
+  local go_test_cmd="go test -v"
+  if [ -n "$tags_flag" ]; then
+    go_test_cmd+=" ${tags_flag}"
+  fi
+  go_test_cmd+=" -coverprofile=${cover_profile} ${package_path}"
+
+  # Execute the command
+  eval "$go_test_cmd" && go tool cover -html="${cover_profile}"
+
   if [ $? -eq 0 ]; then
     echo "Coverage report generated and opened successfully."
   else
     echo "Failed to generate or open coverage report. Check the output above for errors."
   fi
 }
-
-# You can still create an alias if you prefer a shorter command name
-
 # Aliases
 alias ls='ls --color'
 alias c='clear'
