@@ -67,6 +67,31 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# Shell functions
+# Function to run Go test coverage for a specified package and open the HTML report
+go_coverage() {
+  if [ -z "$1" ]; then
+    echo "Usage: go_coverage <./your/package/path>"
+    echo "Example: go_coverage ./service"
+    echo "Example: go_coverage ./"
+    return 1
+  fi
+  
+  local package_path="$1"
+  local cover_profile="coverage.out" # You can make this configurable too if needed
+  
+  echo "Running tests for '$package_path' and generating coverage report..."
+  go test -coverprofile="${cover_profile}" "${package_path}" && go tool cover -html="${cover_profile}"
+  
+  if [ $? -eq 0 ]; then
+    echo "Coverage report generated and opened successfully."
+  else
+    echo "Failed to generate or open coverage report. Check the output above for errors."
+  fi
+}
+
+# You can still create an alias if you prefer a shorter command name
+
 # Aliases
 alias ls='ls --color'
 alias c='clear'
@@ -74,6 +99,7 @@ alias e='exit'
 alias vim="nvim"
 alias vi="nvim"
 alias ls="ls --color"
+alias gocov="go_coverage"
 # alias air='~/.air'
 
 # Shell integrations
