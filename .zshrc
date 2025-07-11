@@ -170,7 +170,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export GEMINI_API_KEY="AIzaSyAwoLBBdr1YPYthwktYOG7jfZ54irPIn4g"
-
+# For .bashrc or .zshrc
+export GPG_TTY=$(tty)
 # zsh parameter completion for the dotnet CLI
 
 _dotnet_zsh_complete()
