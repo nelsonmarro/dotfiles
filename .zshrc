@@ -169,6 +169,8 @@ source <(ng completion script)
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+export GEMINI_API_KEY="AIzaSyAwoLBBdr1YPYthwktYOG7jfZ54irPIn4g"
+
 # zsh parameter completion for the dotnet CLI
 
 _dotnet_zsh_complete()
