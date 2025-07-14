@@ -1,0 +1,4 @@
+. "$HOME/.cargo/env"
+export JIRA_API_TOKEN="ATATT3xFfGF0QcYmBOVraWyQ4jgClt4_aOX1W-FlgyUyHVoDfC93reHhHUjXNCR0o83tiAKQwBqkC6d2AL0nnMGtSxXEkl6YmYtx55OjDNt3mxqRQQyf8YiePGmLlIxb6efYUBwVg-4--CZuxL_BsGrTUdmb8_5AZjohffn4sWZXCusr-dv415I=F90C5878"
+export JIRA_DOMAIN="sovos.atlassian.net"
+export JIRA_USER="nelson.marro@sovos.com"
