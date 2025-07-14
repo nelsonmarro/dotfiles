@@ -169,7 +169,6 @@ source <(ng completion script)
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export GEMINI_API_KEY="AIzaSyAwoLBBdr1YPYthwktYOG7jfZ54irPIn4g"
 # For .bashrc or .zshrc
 export GPG_TTY=$(tty)
 # zsh parameter completion for the dotnet CLI
@@ -191,5 +190,3 @@ _dotnet_zsh_complete()
 compdef _dotnet_zsh_complete dotnet
 
 export SSL_CERT_DIR=$HOME/.aspnet/dev-certs/trust:/usr/lib/ssl/certs
-
-export JIRA_API_TOKEN=ATATT3xFfGF0QcYmBOVraWyQ4jgClt4_aOX1W-FlgyUyHVoDfC93reHhHUjXNCR0o83tiAKQwBqkC6d2AL0nnMGtSxXEkl6YmYtx55OjDNt3mxqRQQyf8YiePGmLlIxb6efYUBwVg-4--CZuxL_BsGrTUdmb8_5AZjohffn4sWZXCusr-dv415I=F90C5878
