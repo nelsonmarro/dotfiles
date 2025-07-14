@@ -169,10 +169,13 @@ source <(ng completion script)
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# For .bashrc or .zshrc
+# GPG/SSH Agent Configuration
 export GPG_TTY=$(tty)
-# zsh parameter completion for the dotnet CLI
+if ! pgrep -x -u "$USER" gpg-agent > /dev/null; then
+  gpg-connect-agent /bye > /dev/null
+fi
 
+# zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")
