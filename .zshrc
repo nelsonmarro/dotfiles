@@ -170,10 +170,10 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # GPG/SSH Agent Configuration
+# GPG Agent Configuration
 export GPG_TTY=$(tty)
-if ! pgrep -x -u "$USER" gpg-agent > /dev/null; then
-  gpg-connect-agent /bye > /dev/null
-fi
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete()
