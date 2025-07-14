@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+# Export secrets from the 'pass' store
+# The 'pass show' command decrypts and prints the secret.
+
+export JIRA_API_TOKEN=$(pass show api_keys/jira)
+export GEMINI_API_KEY=$(pass show api_keys/gemini)
+
+# Add any other secrets you need here
