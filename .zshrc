@@ -192,4 +192,6 @@ _dotnet_zsh_complete()
 }
 compdef _dotnet_zsh_complete dotnet
 
+export GEMINI_API_KEY=AIzaSyD-aJOd-abjME24I5VAoPekwj0hxtDB85s
+
 export SSL_CERT_DIR=$HOME/.aspnet/dev-certs/trust:/usr/lib/ssl/certs
