@@ -147,6 +147,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias ls="ls --color"
 alias gocov="go_coverage"
+alias gdnvim='nvim --listen /tmp/godot.pipe'
 # alias air='~/.air'
 
 # Shell integrations
