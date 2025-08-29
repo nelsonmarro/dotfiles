@@ -163,6 +163,8 @@ export QT_SELECT=6
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
+export GCM_CREDENTIAL_STORE=gpg
+
 # bun completions
 [ -s "/home/nelson/.bun/_bun" ] && source "/home/nelson/.bun/_bun"
 
